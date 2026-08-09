@@ -1,0 +1,42 @@
+<svg viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+  <rect x="0" y="0" width="700" height="260" fill="#1e1e1e" rx="10"/>
+  <text x="350" y="28" fill="#f2f2f2" font-size="15" font-weight="bold" text-anchor="middle">Lap Counting — fast fixed as anchor, slow walks the cycle</text>
+
+  <g font-size="17" fill="#f2f2f2" text-anchor="middle">
+    <rect x="40" y="80" width="55" height="45" rx="7" fill="#2d2d2d" stroke="#888" stroke-width="1.5"/>
+    <text x="67" y="108">1</text>
+    <rect x="150" y="80" width="55" height="45" rx="7" fill="#2d2d2d" stroke="#888" stroke-width="1.5"/>
+    <text x="177" y="108">2</text>
+    <rect x="260" y="80" width="55" height="45" rx="7" fill="#2d2d2d" stroke="#6fcf97" stroke-width="2"/>
+    <text x="287" y="108">3</text>
+    <rect x="370" y="80" width="55" height="45" rx="7" fill="#3a2d2d" stroke="#e07a5f" stroke-width="3"/>
+    <text x="397" y="108">4 (fast, fixed)</text>
+    <rect x="480" y="80" width="55" height="45" rx="7" fill="#2d2d2d" stroke="#6fcf97" stroke-width="2"/>
+    <text x="507" y="108">5</text>
+  </g>
+
+  <g stroke="#5b8def" stroke-width="2" marker-end="url(#a5)">
+    <line x1="95" y1="102" x2="146" y2="102"/>
+    <line x1="205" y1="102" x2="256" y2="102"/>
+    <line x1="315" y1="102" x2="366" y2="102"/>
+    <line x1="425" y1="102" x2="476" y2="102"/>
+  </g>
+  <defs>
+    <marker id="a5" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#5b8def"/>
+    </marker>
+  </defs>
+  <path d="M507,125 C507,165 287,165 287,129" fill="none" stroke="#e07a5f" stroke-width="2" stroke-dasharray="5,3"/>
+
+  <!-- slow positions over the walk, with step numbers -->
+  <text x="507" y="65" fill="#f2c94c" font-size="13" text-anchor="middle" font-weight="bold">slow → here, cot=1</text>
+  <text x="287" y="65" fill="#f2c94c" font-size="13" text-anchor="middle" font-weight="bold">slow → here, cot=2</text>
+  <text x="397" y="60" fill="#f2c94c" font-size="13" text-anchor="middle" font-weight="bold">slow returns here, cot=3 (== fast) STOP</text>
+
+  <line x1="507" y1="70" x2="507" y2="76" stroke="#f2c94c" stroke-width="2"/>
+  <line x1="287" y1="70" x2="287" y2="76" stroke="#f2c94c" stroke-width="2"/>
+  <line x1="397" y1="65" x2="397" y2="76" stroke="#f2c94c" stroke-width="2"/>
+
+  <text x="350" y="220" fill="#ccc" font-size="13" text-anchor="middle">slow: 4 → 5 (cot=1) → 3 (cot=2) → 4 (cot=3, matches fast) → STOP</text>
+  <text x="350" y="245" fill="#6fcf97" font-size="14" text-anchor="middle" font-weight="bold">Loop length = 3</text>
+</svg>
