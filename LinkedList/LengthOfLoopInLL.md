@@ -1,41 +1,10 @@
 # Length of Loop in a Linked List
 
-## 📝 Problem Explanation
+## 💡 Intuition
 
-**Question enna kekkuthu:** Unakku oru linked list kudukuvanga. Andha list la cycle (loop) irukka nu check pannanum, cycle irundha andha loop la eththana nodes irukku nu count panni return pannanum. Cycle illana `0` return pannanum.
+Two pointers, `slow` (1 step) and `fast` (2 steps), race through the list. If there's a cycle, `fast` eventually "laps" `slow` and they land on the same node — that's the meeting point.
 
-**Sample Input:**
-```
-1 -> 2 -> 3 -> 4 -> 5
-          ^         |
-          |_________|
-(5th node points back to 3rd node)
-```
-
-**Sample Output:** `3` (loop nodes: 3 → 4 → 5 → back to 3)
-
-**Simple example:** Nee oru necklace nu nenachikoo, but andha necklace oru rope oda thொடங்கி, middle la irundhu oru loop maadhiri form aagudhu (bracelet maadhiri). Andha bracelet part la eththana beads irukku nu kekkaranga.
-
----
-
-## 💡 Logic Explanation (Thanglish + Simple English)
-
-Idhu **Fast and Slow Pointer** technique (Floyd's Cycle Detection) nu solluvanga. Race maadhiri nenachikoo:
-
-- `slow` pointer oru step step ah nadakkum (1 node move).
-- `fast` pointer rendu step aagaakum (2 nodes move) — adhaan fast!
-
-Ippo, list la cycle irundha, indha rendu pointers ஒரே track la ottam ottுவாங்க (like a circular running track). `fast` speed jaasthi ah irukurathala, adhu `slow`-a **lap adichitu** oru point la meet aagum. Andha meet aagira point thaan namma "cycle irukku" nu confirm pannuvom.
-
-Cycle illana? `fast` pointer `null` ku poyiduvaan (list end aayiduchu), adhுக்கு loop illa nu aritha mudiyum.
-
-**Meet aana pinnadi enna pannanum?**
-
-Ippo `fast`-a andha meeting point la fix pannitu (anchor maadhiri vechitu), `slow`-a mattum move pannuvom, count vechikittu (`cot`). `slow` thirumbi andha same meeting point ku vandhurudhaan matter, adhu eththana steps edukkuthu nu count pannina, adhுthaan namma loop length!
-
-**Why idhu work aagum?** Rendu pointers-um already cycle-ku inside pona pinnadi, avanga eppovum andha cycle-kulla thaan suthi suthi varuvanga. So `slow`-a oru round (one full lap) suthina, thirumbi andha same anchor point ku vandhu serum — adhu exactly cycle oda size.
-
-**One line memory trick:** *"Catch panra, appuram lap edukanum"* — first fast/slow meet aagi cycle confirm pannunga, appuram anchor vechitu one lap suthi count pannunga.
+Once they meet, freeze `fast` right there as an **anchor**. Walk `slow` forward one step at a time, counting. Since both pointers are now trapped inside the cycle, `slow` is guaranteed to come back to the anchor after exactly one full lap — and that step count is the loop's length.
 
 ---
 
@@ -60,8 +29,10 @@ while(fast!=null && fast.next!=null){
     fast = fast.next.next;
 ```
 
-**What happens?** Every iteration la `slow` 1 node move aagum, `fast` 2 nodes move aagum.
-**Why?** Cycle irundha, `fast` first cycle-kulla poyiduvaan, appuram `slow`-oda gap-a ஒவ்வொரு iteration-um 1 node kammi pannikittu varuvaan — final ah meet aagurathukku guarantee.
+**What happens?** Each loop, `slow` moves 1 node, `fast` moves 2 nodes.
+**Why?** If a cycle exists, `fast` enters it first and starts closing the gap with `slow` by 1 node every iteration — guaranteeing a meeting inside the cycle. If there's no cycle, `fast` simply hits `null` and the loop ends.
+
+**Current state (tracked across iterations):**
 
 ![Detection iterations table showing slow/fast positions](/images/loop-02-detection-iterations.svg)
 
@@ -73,8 +44,8 @@ while(fast!=null && fast.next!=null){
 if(fast==slow){
 ```
 
-**What happens?** Iteration 3-la, rendu pointers-um node `4`-la meet aaguthu.
-**Why?** Idhu Floyd's algorithm oda guarantee — cycle-kulla ponapinnadi, rendu pointers-um one full lap-ukkulla definitely meet aaguvanga.
+**What happens?** By iteration 3, both pointers land on node `4`.
+**Why?** This is the mathematical guarantee of Floyd's algorithm — once inside a cycle, the pointers must meet within one full lap of the loop.
 
 ![Meeting point with slow and fast overlapping at node 4](/images/loop-03-meeting-point.svg)
 
@@ -92,9 +63,8 @@ while(slow != fast){
 return cot;
 ```
 
-**What happens?** `fast`-a meeting node-la fix pannitu vechirukom (anchor). `slow` mattum move aaguthu, count `cot` increase aaguthu, `slow` thirumbi `fast` ku equal aagura varaikkum.
-
-**Why?** Meeting point cycle-kulla irukurathala, andha point-la irundhu forward nadandha, exactly `loop_length` steps-la thirumbi andha same node-ku varum.
+**What happens?** `fast` stays fixed at the meeting node (the anchor). `slow` moves forward one node at a time, incrementing `cot`, until it lands back on `fast`.
+**Why?** Since the meeting point is inside the cycle, walking forward from it must return to the same node after exactly `loop_length` steps — that's the definition of a cycle.
 
 ![Lap counting: slow walks from the anchor back to itself, counting steps](/images/loop-04-lap-counting.svg)
 
@@ -105,25 +75,25 @@ return cot;
 **Input:** `1 -> 2 -> 3 -> 4 -> 5 -> (5 points back to 3)`
 **Output:** `3`
 
-`fast` and `slow` node 4-la meet aachu (Floyd's cycle detection). `fast`-a fix pannitu, `slow`-a one full lap (`4 → 5 → 3 → 4`) suthi vachadhula exactly 3 steps — adhுthaan loop length.
+`fast` and `slow` met at node 4 via Floyd's cycle detection. Fixing `fast` there and walking `slow` one full lap (`4 → 5 → 3 → 4`) counted exactly 3 steps — the loop length.
 
 ---
 
 ## ⏱️ Complexity Analysis
 
-- **Time Complexity:** O(N) — meeting point kandupudikka bounded traversal, plus oru extra full lap loop length count pannurathukku.
-- **Space Complexity:** O(1) — pointers and oru counter mattum, extra data structure use pannala.
+- **Time Complexity:** O(N) — bounded traversal to find the meeting point, plus one more full lap around the cycle to count it.
+- **Space Complexity:** O(1) — only pointers and a counter, no extra data structures.
 
 ---
 
 ## 🧠 Key Takeaway
 
-**"Catch panra, appuram lap edukanum."**
-`fast`-a `slow` catch pannitu cycle confirm pannunga → oru pointer-a anchor ah freeze pannunga → verandha pointer-a one full lap suthi count pannunga → adhே loop length.
+**"Catch, then lap it."**
+Catch `fast` with `slow` to confirm the cycle → freeze one pointer as an anchor → walk the other one full lap while counting → that count is the loop length.
 
 **Pattern:** Fast & Slow Pointer (Floyd's Cycle Detection)
 
-⚠️ **Bug in the base case:** `if(head==null && head.next==null)` — `head` `null` na, `&&` short-circuit aagadhu, `head.next` evaluate pannum, adhula NullPointerException varum. `||` use pannanum. Fixed code kீழே kudukapatta irukku.
+⚠️ **Bug in the base case:** `if(head==null && head.next==null)` throws an NPE when `head` is `null` (short-circuiting doesn't save you here since `&&` still evaluates `head.next`). Should be `||`. Fixed in the code below.
 
 ---
 
