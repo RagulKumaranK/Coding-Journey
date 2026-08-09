@@ -34,7 +34,7 @@ while(fast!=null && fast.next!=null){
 
 **Current state (tracked across iterations):**
 
-![Detection iterations table showing slow/fast positions](./images/loop-02-detection-iterations.svg)
+![Detection iterations table showing slow/fast positions](/images/loop-02-detection-iterations.svg)
 
 ---
 
@@ -47,7 +47,7 @@ if(fast==slow){
 **What happens?** By iteration 3, both pointers land on node `4`.
 **Why?** This is the mathematical guarantee of Floyd's algorithm — once inside a cycle, the pointers must meet within one full lap of the loop.
 
-![Meeting point with slow and fast overlapping at node 4](./images/loop-03-meeting-point.svg)
+![Meeting point with slow and fast overlapping at node 4](/images/loop-03-meeting-point.svg)
 
 ---
 
@@ -66,7 +66,7 @@ return cot;
 **What happens?** `fast` stays fixed at the meeting node (the anchor). `slow` moves forward one node at a time, incrementing `cot`, until it lands back on `fast`.
 **Why?** Since the meeting point is inside the cycle, walking forward from it must return to the same node after exactly `loop_length` steps — that's the definition of a cycle.
 
-![Lap counting: slow walks from the anchor back to itself, counting steps](./images/loop-04-lap-counting.svg)
+![Lap counting: slow walks from the anchor back to itself, counting steps](/images/loop-04-lap-counting.svg)
 
 ---
 
