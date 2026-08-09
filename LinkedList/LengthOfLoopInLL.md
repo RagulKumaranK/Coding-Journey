@@ -15,7 +15,7 @@ slow = head
 fast = head
 ```
 
-![Initial state: slow and fast both at head](./images/loop-01-initial-state.svg)
+![Initial state: slow and fast both at head](/images/loop-01-initial-state.svg)
 
 ---
 
