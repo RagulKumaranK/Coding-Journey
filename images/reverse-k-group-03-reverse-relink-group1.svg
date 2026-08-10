@@ -1,0 +1,39 @@
+<svg viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+  <rect x="0" y="0" width="700" height="260" fill="#1e1e1e" rx="10"/>
+  <text x="350" y="28" fill="#f2f2f2" font-size="15" font-weight="bold" text-anchor="middle">Reverse Group 1 &amp; Relink</text>
+
+  <!-- reversed group -->
+  <g font-size="17" fill="#f2f2f2" text-anchor="middle">
+    <rect x="30" y="75" width="55" height="45" rx="7" fill="#3a2d2d" stroke="#e07a5f" stroke-width="2.5"/><text x="57" y="103">2</text>
+    <rect x="140" y="75" width="55" height="45" rx="7" fill="#2d2d2d" stroke="#6fcf97" stroke-width="2"/><text x="167" y="103">1</text>
+    <rect x="270" y="75" width="55" height="45" rx="7" fill="#2d2d2d" stroke="#888" stroke-width="1.5"/><text x="297" y="103">3</text>
+    <rect x="380" y="75" width="55" height="45" rx="7" fill="#2d2d2d" stroke="#888" stroke-width="1.5"/><text x="407" y="103">4</text>
+    <rect x="490" y="75" width="55" height="45" rx="7" fill="#2d2d2d" stroke="#888" stroke-width="1.5"/><text x="517" y="103">5</text>
+  </g>
+
+  <!-- reversed arrow between 2 and 1 -->
+  <line x1="140" y1="97" x2="91" y2="97" stroke="#e07a5f" stroke-width="2.5" marker-end="url(#a3r)"/>
+  <text x="113" y="85" fill="#e07a5f" font-size="12" text-anchor="middle">reversed</text>
+
+  <!-- relink: node1(temp/tail).next = nextGroup(3) -->
+  <path d="M167,120 C167,160 297,160 297,129" fill="none" stroke="#5b8def" stroke-width="2.5" marker-end="url(#a3f)"/>
+  <text x="230" y="150" fill="#5b8def" font-size="12" text-anchor="middle">temp.next = nextGroup</text>
+
+  <line x1="325" y1="97" x2="376" y2="97" stroke="#5b8def" stroke-width="2" marker-end="url(#a3f)"/>
+  <line x1="435" y1="97" x2="486" y2="97" stroke="#5b8def" stroke-width="2" marker-end="url(#a3f)"/>
+
+  <defs>
+    <marker id="a3f" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#5b8def"/>
+    </marker>
+    <marker id="a3r" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#e07a5f"/>
+    </marker>
+  </defs>
+
+  <text x="57" y="65" fill="#6fcf97" font-size="13" text-anchor="middle" font-weight="bold">head / rev</text>
+  <text x="167" y="65" fill="#f2c94c" font-size="13" text-anchor="middle" font-weight="bold">temp (tail, becomes prev)</text>
+
+  <text x="350" y="200" fill="#ccc" font-size="13" text-anchor="middle">rev = revHead(temp) → 2 → 1   |   prev == null so head = rev</text>
+  <text x="350" y="222" fill="#ccc" font-size="13" text-anchor="middle">prev = temp (node 1)   |   temp.next = nextGroup (node 3)   |   temp = nextGroup</text>
+</svg>

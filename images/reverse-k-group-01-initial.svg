@@ -1,0 +1,30 @@
+<svg viewBox="0 0 700 200" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+  <rect x="0" y="0" width="700" height="200" fill="#1e1e1e" rx="10"/>
+  <text x="350" y="28" fill="#f2f2f2" font-size="15" font-weight="bold" text-anchor="middle">Initial State — k = 2</text>
+
+  <g font-size="17" fill="#f2f2f2" text-anchor="middle">
+    <rect x="30" y="75" width="55" height="45" rx="7" fill="#2d2d2d" stroke="#888" stroke-width="1.5"/><text x="57" y="103">1</text>
+    <rect x="140" y="75" width="55" height="45" rx="7" fill="#2d2d2d" stroke="#888" stroke-width="1.5"/><text x="167" y="103">2</text>
+    <rect x="250" y="75" width="55" height="45" rx="7" fill="#2d2d2d" stroke="#888" stroke-width="1.5"/><text x="277" y="103">3</text>
+    <rect x="360" y="75" width="55" height="45" rx="7" fill="#2d2d2d" stroke="#888" stroke-width="1.5"/><text x="387" y="103">4</text>
+    <rect x="470" y="75" width="55" height="45" rx="7" fill="#2d2d2d" stroke="#888" stroke-width="1.5"/><text x="497" y="103">5</text>
+  </g>
+  <g stroke="#5b8def" stroke-width="2" marker-end="url(#a)">
+    <line x1="85" y1="97" x2="136" y2="97"/>
+    <line x1="195" y1="97" x2="246" y2="97"/>
+    <line x1="305" y1="97" x2="356" y2="97"/>
+    <line x1="415" y1="97" x2="466" y2="97"/>
+  </g>
+  <text x="565" y="103" fill="#888" font-size="14">→ NULL</text>
+  <line x1="525" y1="97" x2="558" y2="97" stroke="#5b8def" stroke-width="2" marker-end="url(#a)"/>
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#5b8def"/>
+    </marker>
+  </defs>
+
+  <text x="57" y="65" fill="#f2c94c" font-size="13" text-anchor="middle" font-weight="bold">temp</text>
+  <line x1="57" y1="68" x2="57" y2="73" stroke="#f2c94c" stroke-width="2"/>
+
+  <text x="350" y="160" fill="#ccc" font-size="13" text-anchor="middle">temp = head (node 1), prev = null</text>
+</svg>

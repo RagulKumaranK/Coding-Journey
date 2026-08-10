@@ -1,0 +1,39 @@
+<svg viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+  <rect x="0" y="0" width="700" height="260" fill="#1e1e1e" rx="10"/>
+  <text x="350" y="28" fill="#f2f2f2" font-size="15" font-weight="bold" text-anchor="middle">Group 2 — Find, Cut, Reverse &amp; Relink (nodes 3, 4)</text>
+
+  <g font-size="17" fill="#f2f2f2" text-anchor="middle">
+    <rect x="20" y="75" width="55" height="45" rx="7" fill="#3a2d2d" stroke="#e07a5f" stroke-width="2.5"/><text x="47" y="103">2</text>
+    <rect x="130" y="75" width="55" height="45" rx="7" fill="#2d2d2d" stroke="#888" stroke-width="1.5"/><text x="157" y="103">1</text>
+    <rect x="260" y="75" width="55" height="45" rx="7" fill="#3a2d2d" stroke="#e07a5f" stroke-width="2.5"/><text x="287" y="103">4</text>
+    <rect x="370" y="75" width="55" height="45" rx="7" fill="#2d2d2d" stroke="#6fcf97" stroke-width="2"/><text x="397" y="103">3</text>
+    <rect x="500" y="75" width="55" height="45" rx="7" fill="#2d2d2d" stroke="#888" stroke-width="1.5"/><text x="527" y="103">5</text>
+  </g>
+
+  <!-- fixed link node2->node1 -->
+  <line x1="75" y1="97" x2="126" y2="97" stroke="#888" stroke-width="2" marker-end="url(#a4)"/>
+  <!-- prev(node1).next = rev(node4) -->
+  <path d="M157,120 C157,155 287,155 287,129" fill="none" stroke="#5b8def" stroke-width="2.5" marker-end="url(#a4)"/>
+  <text x="220" y="148" fill="#5b8def" font-size="12" text-anchor="middle">prev.next = rev</text>
+  <!-- reversed 4->3 -->
+  <line x1="370" y1="97" x2="321" y2="97" stroke="#e07a5f" stroke-width="2.5" marker-end="url(#a4r)"/>
+  <text x="343" y="85" fill="#e07a5f" font-size="12" text-anchor="middle">reversed</text>
+  <!-- node3(temp/tail).next = nextGroup(5) -->
+  <path d="M397,120 C397,155 527,155 527,129" fill="none" stroke="#5b8def" stroke-width="2.5" marker-end="url(#a4)"/>
+  <text x="460" y="148" fill="#5b8def" font-size="12" text-anchor="middle">temp.next = nextGroup</text>
+
+  <defs>
+    <marker id="a4" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#5b8def"/>
+    </marker>
+    <marker id="a4r" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#e07a5f"/>
+    </marker>
+  </defs>
+
+  <text x="157" y="65" fill="#f2c94c" font-size="13" text-anchor="middle" font-weight="bold">prev (node 1)</text>
+  <text x="397" y="65" fill="#f2c94c" font-size="13" text-anchor="middle" font-weight="bold">temp → becomes new prev</text>
+
+  <text x="350" y="200" fill="#ccc" font-size="13" text-anchor="middle">kth = findKthNode(3, 2) → node 4   |   nextGroup = 5   |   kth.next = null</text>
+  <text x="350" y="222" fill="#ccc" font-size="13" text-anchor="middle">rev = revHead(3) → 4 → 3   |   prev.next = rev   |   temp = nextGroup (node 5)</text>
+</svg>

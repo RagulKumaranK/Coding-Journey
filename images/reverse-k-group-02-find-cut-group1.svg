@@ -1,0 +1,34 @@
+<svg viewBox="0 0 700 220" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+  <rect x="0" y="0" width="700" height="220" fill="#1e1e1e" rx="10"/>
+  <text x="350" y="28" fill="#f2f2f2" font-size="15" font-weight="bold" text-anchor="middle">Find kth Node &amp; Cut — Group 1 (nodes 1, 2)</text>
+
+  <!-- group 1 boxed -->
+  <rect x="20" y="60" width="200" height="65" rx="10" fill="none" stroke="#6fcf97" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="120" y="52" fill="#6fcf97" font-size="12" text-anchor="middle">group of size k=2</text>
+
+  <g font-size="17" fill="#f2f2f2" text-anchor="middle">
+    <rect x="30" y="75" width="55" height="45" rx="7" fill="#2d2d2d" stroke="#888" stroke-width="1.5"/><text x="57" y="103">1</text>
+    <rect x="140" y="75" width="55" height="45" rx="7" fill="#3a2d2d" stroke="#e07a5f" stroke-width="2.5"/><text x="167" y="103">2</text>
+    <rect x="250" y="75" width="55" height="45" rx="7" fill="#2d2d2d" stroke="#888" stroke-width="1.5"/><text x="277" y="103">3</text>
+    <rect x="360" y="75" width="55" height="45" rx="7" fill="#2d2d2d" stroke="#888" stroke-width="1.5"/><text x="387" y="103">4</text>
+    <rect x="470" y="75" width="55" height="45" rx="7" fill="#2d2d2d" stroke="#888" stroke-width="1.5"/><text x="497" y="103">5</text>
+  </g>
+  <line x1="85" y1="97" x2="136" y2="97" stroke="#5b8def" stroke-width="2" marker-end="url(#a2)"/>
+  <!-- cut here -->
+  <line x1="195" y1="70" x2="195" y2="130" stroke="#e07a5f" stroke-width="2.5"/>
+  <text x="195" y="60" fill="#e07a5f" font-size="12" text-anchor="middle">cut: kth.next = null</text>
+  <line x1="305" y1="97" x2="356" y2="97" stroke="#5b8def" stroke-width="2" marker-end="url(#a2)"/>
+  <line x1="415" y1="97" x2="466" y2="97" stroke="#5b8def" stroke-width="2" marker-end="url(#a2)"/>
+  <defs>
+    <marker id="a2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#5b8def"/>
+    </marker>
+  </defs>
+
+  <text x="57" y="65" fill="#f2c94c" font-size="13" text-anchor="middle" font-weight="bold">temp</text>
+  <text x="167" y="65" fill="#e07a5f" font-size="13" text-anchor="middle" font-weight="bold">kth</text>
+  <line x1="57" y1="68" x2="57" y2="73" stroke="#f2c94c" stroke-width="2"/>
+
+  <text x="350" y="175" fill="#ccc" font-size="13" text-anchor="middle">kth = findKthNode(temp, 2) → node 2</text>
+  <text x="350" y="197" fill="#ccc" font-size="13" text-anchor="middle">nextGroup = kth.next (node 3, saved before cutting) → kth.next = null</text>
+</svg>
