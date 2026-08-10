@@ -1,0 +1,30 @@
+<svg viewBox="0 0 700 190" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+  <rect x="0" y="0" width="700" height="190" fill="#1e1e1e" rx="10"/>
+  <text x="350" y="28" fill="#f2f2f2" font-size="15" font-weight="bold" text-anchor="middle">Compute Length &amp; Find Tail</text>
+
+  <g font-size="17" fill="#f2f2f2" text-anchor="middle">
+    <rect x="30" y="70" width="55" height="45" rx="7" fill="#2d2d2d" stroke="#888" stroke-width="1.5"/><text x="57" y="98">1</text>
+    <rect x="140" y="70" width="55" height="45" rx="7" fill="#2d2d2d" stroke="#888" stroke-width="1.5"/><text x="167" y="98">2</text>
+    <rect x="250" y="70" width="55" height="45" rx="7" fill="#2d2d2d" stroke="#888" stroke-width="1.5"/><text x="277" y="98">3</text>
+    <rect x="360" y="70" width="55" height="45" rx="7" fill="#2d2d2d" stroke="#888" stroke-width="1.5"/><text x="387" y="98">4</text>
+    <rect x="470" y="70" width="55" height="45" rx="7" fill="#3a2d2d" stroke="#e07a5f" stroke-width="2.5"/><text x="497" y="98">5</text>
+  </g>
+  <g stroke="#5b8def" stroke-width="2" marker-end="url(#a2)">
+    <line x1="85" y1="92" x2="136" y2="92"/>
+    <line x1="195" y1="92" x2="246" y2="92"/>
+    <line x1="305" y1="92" x2="356" y2="92"/>
+    <line x1="415" y1="92" x2="466" y2="92"/>
+  </g>
+  <text x="565" y="98" fill="#888" font-size="14">→ NULL</text>
+  <line x1="525" y1="92" x2="558" y2="92" stroke="#5b8def" stroke-width="2" marker-end="url(#a2)"/>
+  <defs>
+    <marker id="a2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#5b8def"/>
+    </marker>
+  </defs>
+
+  <text x="497" y="60" fill="#e07a5f" font-size="13" text-anchor="middle" font-weight="bold">tail</text>
+  <line x1="497" y1="63" x2="497" y2="68" stroke="#e07a5f" stroke-width="2"/>
+
+  <text x="350" y="155" fill="#ccc" font-size="13" text-anchor="middle">while(tail.next != null) tail = tail.next, len++  →  len = 5, tail = node 5</text>
+</svg>
