@@ -1,0 +1,38 @@
+<svg viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+  <rect x="0" y="0" width="700" height="260" fill="#1e1e1e" rx="10"/>
+  <text x="350" y="28" fill="#f2f2f2" font-size="15" font-weight="bold" text-anchor="middle">Initial List — next (solid) and random (dashed) pointers</text>
+
+  <g font-size="16" fill="#f2f2f2" text-anchor="middle">
+    <rect x="60" y="90" width="90" height="50" rx="8" fill="#2d2d2d" stroke="#6fcf97" stroke-width="2"/><text x="105" y="120">A (val 1)</text>
+    <rect x="290" y="90" width="90" height="50" rx="8" fill="#2d2d2d" stroke="#888" stroke-width="1.5"/><text x="335" y="120">B (val 2)</text>
+    <rect x="520" y="90" width="90" height="50" rx="8" fill="#2d2d2d" stroke="#888" stroke-width="1.5"/><text x="565" y="120">C (val 3)</text>
+  </g>
+
+  <!-- next arrows -->
+  <g stroke="#5b8def" stroke-width="2" marker-end="url(#a1)">
+    <line x1="150" y1="115" x2="286" y2="115"/>
+    <line x1="380" y1="115" x2="516" y2="115"/>
+  </g>
+  <text x="655" y="120" fill="#888" font-size="13">→ NULL</text>
+  <line x1="610" y1="115" x2="648" y2="115" stroke="#5b8def" stroke-width="2" marker-end="url(#a1)"/>
+  <defs>
+    <marker id="a1" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#5b8def"/>
+    </marker>
+    <marker id="a1r" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#e07a5f"/>
+    </marker>
+  </defs>
+
+  <!-- random arrows (dashed) -->
+  <path d="M105,90 C105,30 565,30 565,86" fill="none" stroke="#e07a5f" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#a1r)"/>
+  <text x="335" y="25" fill="#e07a5f" font-size="12" text-anchor="middle">A.random = C</text>
+
+  <path d="M335,140 C335,200 105,200 105,144" fill="none" stroke="#e07a5f" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#a1r)"/>
+  <text x="220" y="215" fill="#e07a5f" font-size="12" text-anchor="middle">B.random = A</text>
+
+  <path d="M610,120 C650,150 610,180 570,144" fill="none" stroke="#e07a5f" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#a1r)"/>
+  <text x="640" y="185" fill="#e07a5f" font-size="12" text-anchor="middle">C.random = B</text>
+
+  <text x="105" y="80" fill="#f2c94c" font-size="13" text-anchor="middle" font-weight="bold">head / temp</text>
+</svg>

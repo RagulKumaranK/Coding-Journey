@@ -1,0 +1,39 @@
+<svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+  <rect x="0" y="0" width="700" height="280" fill="#1e1e1e" rx="10"/>
+  <text x="350" y="28" fill="#f2f2f2" font-size="15" font-weight="bold" text-anchor="middle">Pass 2 — Wire Clone's next &amp; random via the Map</text>
+
+  <g font-size="15" fill="#f2f2f2" text-anchor="middle">
+    <rect x="60" y="90" width="90" height="45" rx="8" fill="#2d2d2d" stroke="#6fcf97" stroke-width="2"/><text x="105" y="118">A' (val 1)</text>
+    <rect x="290" y="90" width="90" height="45" rx="8" fill="#2d2d2d" stroke="#6fcf97" stroke-width="2"/><text x="335" y="118">B' (val 2)</text>
+    <rect x="520" y="90" width="90" height="45" rx="8" fill="#2d2d2d" stroke="#6fcf97" stroke-width="2"/><text x="565" y="118">C' (val 3)</text>
+  </g>
+
+  <!-- clone next arrows -->
+  <g stroke="#5b8def" stroke-width="2" marker-end="url(#a3)">
+    <line x1="150" y1="112" x2="286" y2="112"/>
+    <line x1="380" y1="112" x2="516" y2="112"/>
+  </g>
+  <text x="655" y="118" fill="#888" font-size="13">→ NULL</text>
+  <line x1="610" y1="112" x2="648" y2="112" stroke="#5b8def" stroke-width="2" marker-end="url(#a3)"/>
+  <defs>
+    <marker id="a3" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#5b8def"/>
+    </marker>
+    <marker id="a3r" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#e07a5f"/>
+    </marker>
+  </defs>
+
+  <!-- clone random arrows, same shape as original but between clones -->
+  <path d="M105,90 C105,30 565,30 565,86" fill="none" stroke="#e07a5f" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#a3r)"/>
+  <text x="335" y="25" fill="#e07a5f" font-size="12" text-anchor="middle">A'.random = map.get(A.random) = C'</text>
+
+  <path d="M335,135 C335,195 105,195 105,139" fill="none" stroke="#e07a5f" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#a3r)"/>
+  <text x="220" y="210" fill="#e07a5f" font-size="12" text-anchor="middle">B'.random = map.get(B.random) = A'</text>
+
+  <path d="M610,118 C650,150 610,180 570,142" fill="none" stroke="#e07a5f" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#a3r)"/>
+  <text x="640" y="185" fill="#e07a5f" font-size="12" text-anchor="middle">C'.random = map.get(C.random) = B'</text>
+
+  <text x="350" y="245" fill="#ccc" font-size="12" text-anchor="middle">copy.next = map.get(temp.next)  |  copy.random = map.get(temp.random)</text>
+  <text x="350" y="265" fill="#ccc" font-size="12" text-anchor="middle">map.get(null) → null, so the last node's next correctly stays null</text>
+</svg>

@@ -1,0 +1,35 @@
+<svg viewBox="0 0 700 220" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+  <rect x="0" y="0" width="700" height="220" fill="#1e1e1e" rx="10"/>
+  <text x="350" y="28" fill="#f2f2f2" font-size="15" font-weight="bold" text-anchor="middle">Final Result — Original List Untouched, Clone Fully Independent</text>
+
+  <!-- original -->
+  <text x="30" y="80" fill="#888" font-size="12" font-weight="bold">original:</text>
+  <g font-size="14" fill="#f2f2f2" text-anchor="middle">
+    <rect x="100" y="58" width="75" height="42" rx="7" fill="#2d2d2d" stroke="#888" stroke-width="1.5"/><text x="137" y="84">A (1)</text>
+    <rect x="290" y="58" width="75" height="42" rx="7" fill="#2d2d2d" stroke="#888" stroke-width="1.5"/><text x="327" y="84">B (2)</text>
+    <rect x="480" y="58" width="75" height="42" rx="7" fill="#2d2d2d" stroke="#888" stroke-width="1.5"/><text x="517" y="84">C (3)</text>
+  </g>
+  <g stroke="#5b8def" stroke-width="1.5" marker-end="url(#a4)">
+    <line x1="175" y1="79" x2="286" y2="79"/>
+    <line x1="365" y1="79" x2="476" y2="79"/>
+  </g>
+  <defs>
+    <marker id="a4" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#5b8def"/>
+    </marker>
+  </defs>
+
+  <!-- clone -->
+  <text x="30" y="160" fill="#6fcf97" font-size="12" font-weight="bold">clone:</text>
+  <g font-size="14" fill="#f2f2f2" text-anchor="middle">
+    <rect x="100" y="138" width="75" height="42" rx="7" fill="#2d2d2d" stroke="#6fcf97" stroke-width="2"/><text x="137" y="164">A' (1)</text>
+    <rect x="290" y="138" width="75" height="42" rx="7" fill="#2d2d2d" stroke="#6fcf97" stroke-width="2"/><text x="327" y="164">B' (2)</text>
+    <rect x="480" y="138" width="75" height="42" rx="7" fill="#2d2d2d" stroke="#6fcf97" stroke-width="2"/><text x="517" y="164">C' (3)</text>
+  </g>
+  <g stroke="#5b8def" stroke-width="1.5" marker-end="url(#a4)">
+    <line x1="175" y1="159" x2="286" y2="159"/>
+    <line x1="365" y1="159" x2="476" y2="159"/>
+  </g>
+
+  <text x="350" y="205" fill="#ccc" font-size="12" text-anchor="middle">return map.get(head) → A'  (deep copy: same values &amp; structure, zero shared node references)</text>
+</svg>
