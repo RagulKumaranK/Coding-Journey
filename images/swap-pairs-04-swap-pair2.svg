@@ -1,0 +1,46 @@
+<svg viewBox="0 0 700 250" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+  <rect x="0" y="0" width="700" height="250" fill="#1e1e1e" rx="10"/>
+  <text x="350" y="28" fill="#f2f2f2" font-size="15" font-weight="bold" text-anchor="middle">Next Iteration — Identify &amp; Swap Pair 2 (nodes 3, 4)</text>
+
+  <g font-size="16" fill="#f2f2f2" text-anchor="middle">
+    <rect x="20" y="80" width="55" height="45" rx="7" fill="#2d2d2d" stroke="#888" stroke-width="1.5"/><text x="47" y="108">2</text>
+    <rect x="130" y="80" width="55" height="45" rx="7" fill="#2d2d2d" stroke="#f2c94c" stroke-width="2"/><text x="157" y="108">1</text>
+    <rect x="290" y="80" width="55" height="45" rx="7" fill="#2d3a2d" stroke="#6fcf97" stroke-width="2.5"/><text x="317" y="108">4</text>
+    <rect x="400" y="80" width="55" height="45" rx="7" fill="#3a2d2d" stroke="#e07a5f" stroke-width="2.5"/><text x="427" y="108">3</text>
+  </g>
+
+  <line x1="75" y1="102" x2="126" y2="102" stroke="#5b8def" stroke-width="2" marker-end="url(#a4)"/>
+
+  <!-- prev(node1).next = second(4) -->
+  <path d="M185,102 C230,102 260,102 286,102" fill="none" stroke="#5b8def" stroke-width="2.5" marker-end="url(#a4)"/>
+  <text x="235" y="90" fill="#5b8def" font-size="11" text-anchor="middle">prev.next = second</text>
+
+  <!-- second.next = first -->
+  <line x1="345" y1="102" x2="396" y2="102" stroke="#e07a5f" stroke-width="2.5" marker-end="url(#a4r)"/>
+  <text x="370" y="90" fill="#e07a5f" font-size="11" text-anchor="middle">second.next = first</text>
+
+  <!-- first.next = second.next (null) -->
+  <text x="530" y="102" fill="#888" font-size="14">→ NULL</text>
+  <line x1="455" y1="130" x2="510" y2="130" stroke="#6fcf97" stroke-width="2" marker-end="url(#a4g)"/>
+  <path d="M427,125 L427,130 L505,130" fill="none" stroke="#6fcf97" stroke-width="2"/>
+  <text x="500" y="148" fill="#6fcf97" font-size="11" text-anchor="middle">first.next = second.next (null)</text>
+
+  <defs>
+    <marker id="a4" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#5b8def"/>
+    </marker>
+    <marker id="a4r" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#e07a5f"/>
+    </marker>
+    <marker id="a4g" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#6fcf97"/>
+    </marker>
+  </defs>
+
+  <text x="157" y="70" fill="#f2c94c" font-size="13" text-anchor="middle" font-weight="bold">prev</text>
+  <text x="317" y="70" fill="#6fcf97" font-size="13" text-anchor="middle" font-weight="bold">second</text>
+  <text x="427" y="70" fill="#e07a5f" font-size="13" text-anchor="middle" font-weight="bold">first</text>
+
+  <text x="350" y="190" fill="#ccc" font-size="12" text-anchor="middle">first = 3, second = 4 → after swap: 2 → 1 → 4 → 3 → NULL; prev = first (node 3)</text>
+  <text x="350" y="212" fill="#ccc" font-size="12" text-anchor="middle">while condition now fails (prev.next == null) → loop ends</text>
+</svg>

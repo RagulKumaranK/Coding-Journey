@@ -1,0 +1,25 @@
+<svg viewBox="0 0 700 190" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+  <rect x="0" y="0" width="700" height="190" fill="#1e1e1e" rx="10"/>
+  <text x="350" y="28" fill="#f2f2f2" font-size="15" font-weight="bold" text-anchor="middle">Final Result</text>
+
+  <g font-size="17" fill="#f2f2f2" text-anchor="middle">
+    <rect x="120" y="70" width="55" height="45" rx="7" fill="#2d2d2d" stroke="#6fcf97" stroke-width="2"/><text x="147" y="98">2</text>
+    <rect x="230" y="70" width="55" height="45" rx="7" fill="#2d2d2d" stroke="#6fcf97" stroke-width="2"/><text x="257" y="98">1</text>
+    <rect x="340" y="70" width="55" height="45" rx="7" fill="#2d2d2d" stroke="#6fcf97" stroke-width="2"/><text x="367" y="98">4</text>
+    <rect x="450" y="70" width="55" height="45" rx="7" fill="#2d2d2d" stroke="#6fcf97" stroke-width="2"/><text x="477" y="98">3</text>
+  </g>
+  <g stroke="#5b8def" stroke-width="2" marker-end="url(#a5)">
+    <line x1="175" y1="92" x2="226" y2="92"/>
+    <line x1="285" y1="92" x2="336" y2="92"/>
+    <line x1="395" y1="92" x2="446" y2="92"/>
+  </g>
+  <text x="575" y="98" fill="#888" font-size="14">→ NULL</text>
+  <line x1="505" y1="92" x2="568" y2="92" stroke="#5b8def" stroke-width="2" marker-end="url(#a5)"/>
+  <defs>
+    <marker id="a5" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#5b8def"/>
+    </marker>
+  </defs>
+
+  <text x="350" y="150" fill="#6fcf97" font-size="14" text-anchor="middle" font-weight="bold">return dummy.next → 2 → 1 → 4 → 3</text>
+</svg>

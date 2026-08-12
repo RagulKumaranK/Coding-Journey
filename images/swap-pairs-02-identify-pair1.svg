@@ -1,0 +1,29 @@
+<svg viewBox="0 0 700 190" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+  <rect x="0" y="0" width="700" height="190" fill="#1e1e1e" rx="10"/>
+  <text x="350" y="28" fill="#f2f2f2" font-size="15" font-weight="bold" text-anchor="middle">Identify the Pair — first = prev.next, second = prev.next.next</text>
+
+  <g font-size="16" fill="#f2f2f2" text-anchor="middle">
+    <rect x="20" y="70" width="70" height="45" rx="7" fill="#2d2d2d" stroke="#f2c94c" stroke-width="2"/><text x="55" y="98">dummy</text>
+    <rect x="150" y="70" width="55" height="45" rx="7" fill="#3a2d2d" stroke="#e07a5f" stroke-width="2.5"/><text x="177" y="98">1</text>
+    <rect x="260" y="70" width="55" height="45" rx="7" fill="#2d3a2d" stroke="#6fcf97" stroke-width="2.5"/><text x="287" y="98">2</text>
+    <rect x="370" y="70" width="55" height="45" rx="7" fill="#2d2d2d" stroke="#888" stroke-width="1.5"/><text x="397" y="98">3</text>
+    <rect x="480" y="70" width="55" height="45" rx="7" fill="#2d2d2d" stroke="#888" stroke-width="1.5"/><text x="507" y="98">4</text>
+  </g>
+  <g stroke="#5b8def" stroke-width="2" marker-end="url(#a2)">
+    <line x1="90" y1="92" x2="146" y2="92"/>
+    <line x1="205" y1="92" x2="256" y2="92"/>
+    <line x1="315" y1="92" x2="366" y2="92"/>
+    <line x1="425" y1="92" x2="476" y2="92"/>
+  </g>
+  <defs>
+    <marker id="a2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#5b8def"/>
+    </marker>
+  </defs>
+
+  <text x="55" y="60" fill="#f2c94c" font-size="13" text-anchor="middle" font-weight="bold">prev</text>
+  <text x="177" y="60" fill="#e07a5f" font-size="13" text-anchor="middle" font-weight="bold">first</text>
+  <text x="287" y="60" fill="#6fcf97" font-size="13" text-anchor="middle" font-weight="bold">second</text>
+
+  <text x="350" y="155" fill="#ccc" font-size="13" text-anchor="middle">first = node 1, second = node 2 — this pair is about to be swapped</text>
+</svg>

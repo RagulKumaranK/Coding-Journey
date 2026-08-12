@@ -1,0 +1,43 @@
+<svg viewBox="0 0 700 250" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+  <rect x="0" y="0" width="700" height="250" fill="#1e1e1e" rx="10"/>
+  <text x="350" y="28" fill="#f2f2f2" font-size="15" font-weight="bold" text-anchor="middle">Swap Pair 1 — relink first, second, and prev</text>
+
+  <g font-size="16" fill="#f2f2f2" text-anchor="middle">
+    <rect x="20" y="80" width="70" height="45" rx="7" fill="#2d2d2d" stroke="#f2c94c" stroke-width="2"/><text x="55" y="108">dummy</text>
+    <rect x="270" y="80" width="55" height="45" rx="7" fill="#2d3a2d" stroke="#6fcf97" stroke-width="2.5"/><text x="297" y="108">2</text>
+    <rect x="380" y="80" width="55" height="45" rx="7" fill="#3a2d2d" stroke="#e07a5f" stroke-width="2.5"/><text x="407" y="108">1</text>
+    <rect x="490" y="80" width="55" height="45" rx="7" fill="#2d2d2d" stroke="#888" stroke-width="1.5"/><text x="517" y="108">3</text>
+    <rect x="600" y="80" width="55" height="45" rx="7" fill="#2d2d2d" stroke="#888" stroke-width="1.5"/><text x="627" y="108">4</text>
+  </g>
+
+  <!-- prev.next = second -->
+  <path d="M90,102 C150,102 210,102 266,102" fill="none" stroke="#5b8def" stroke-width="2.5" marker-end="url(#a3)"/>
+  <text x="180" y="90" fill="#5b8def" font-size="11" text-anchor="middle">prev.next = second</text>
+
+  <!-- second.next = first -->
+  <line x1="325" y1="102" x2="376" y2="102" stroke="#e07a5f" stroke-width="2.5" marker-end="url(#a3r)"/>
+  <text x="350" y="90" fill="#e07a5f" font-size="11" text-anchor="middle">second.next = first</text>
+
+  <!-- first.next = second.next (original, i.e. node 3) -->
+  <path d="M407,125 C407,165 517,165 517,129" fill="none" stroke="#6fcf97" stroke-width="2.5" marker-end="url(#a3g)"/>
+  <text x="460" y="150" fill="#6fcf97" font-size="11" text-anchor="middle">first.next = second.next (saved before overwrite)</text>
+
+  <line x1="545" y1="102" x2="596" y2="102" stroke="#5b8def" stroke-width="2" marker-end="url(#a3)"/>
+
+  <defs>
+    <marker id="a3" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#5b8def"/>
+    </marker>
+    <marker id="a3r" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#e07a5f"/>
+    </marker>
+    <marker id="a3g" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#6fcf97"/>
+    </marker>
+  </defs>
+
+  <text x="407" y="70" fill="#f2c94c" font-size="13" text-anchor="middle" font-weight="bold">prev moves here next</text>
+
+  <text x="350" y="200" fill="#ccc" font-size="12" text-anchor="middle">Order of ops matters: save first.next=second.next BEFORE second.next=first, else the link to node 3 is lost</text>
+  <text x="350" y="222" fill="#ccc" font-size="12" text-anchor="middle">After swap: dummy → 2 → 1 → 3 → 4;  prev = first (node 1)</text>
+</svg>
