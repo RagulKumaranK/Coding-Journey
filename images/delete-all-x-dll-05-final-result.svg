@@ -1,0 +1,26 @@
+<svg viewBox="0 0 700 190" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+  <rect x="0" y="0" width="700" height="190" fill="#1e1e1e" rx="10"/>
+  <text x="350" y="26" fill="#f2f2f2" font-size="15" font-weight="bold" text-anchor="middle">Final Result — all nodes with value 2 removed</text>
+
+  <g font-size="16" fill="#f2f2f2" text-anchor="middle">
+    <rect x="140" y="75" width="55" height="45" rx="7" fill="#2d2d2d" stroke="#6fcf97" stroke-width="2"/><text x="167" y="103">1</text>
+    <rect x="300" y="75" width="55" height="45" rx="7" fill="#2d2d2d" stroke="#6fcf97" stroke-width="2"/><text x="327" y="103">3</text>
+    <rect x="460" y="75" width="55" height="45" rx="7" fill="#2d2d2d" stroke="#6fcf97" stroke-width="2"/><text x="487" y="103">4</text>
+  </g>
+  <g stroke="#5b8def" stroke-width="1.8" marker-end="url(#af5)">
+    <line x1="195" y1="90" x2="296" y2="90"/>
+    <line x1="355" y1="90" x2="456" y2="90"/>
+  </g>
+  <g stroke="#f2c94c" stroke-width="1.8" marker-end="url(#ab5)">
+    <line x1="296" y1="108" x2="195" y2="108"/>
+    <line x1="456" y1="108" x2="355" y2="108"/>
+  </g>
+  <defs>
+    <marker id="af5" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#5b8def"/></marker>
+    <marker id="ab5" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#f2c94c"/></marker>
+  </defs>
+
+  <text x="167" y="65" fill="#f2c94c" font-size="13" text-anchor="middle" font-weight="bold">new head</text>
+
+  <text x="350" y="150" fill="#6fcf97" font-size="14" text-anchor="middle" font-weight="bold">return head → 1 &lt;-&gt; 3 &lt;-&gt; 4</text>
+</svg>

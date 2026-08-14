@@ -1,0 +1,29 @@
+<svg viewBox="0 0 700 220" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+  <rect x="0" y="0" width="700" height="220" fill="#1e1e1e" rx="10"/>
+  <text x="350" y="26" fill="#f2f2f2" font-size="15" font-weight="bold" text-anchor="middle">Case 2: temp.prev != null &amp; temp.next != null → deleting a MIDDLE node</text>
+
+  <g font-size="15" fill="#f2f2f2" text-anchor="middle">
+    <rect x="60" y="80" width="55" height="45" rx="7" fill="#2d2d2d" stroke="#6fcf97" stroke-width="2.5"/><text x="87" y="108">3</text>
+    <rect x="260" y="80" width="55" height="45" rx="7" fill="#3a2d2d" stroke="#e07a5f" stroke-width="2.5" stroke-dasharray="4,3"/><text x="287" y="108">2</text>
+    <rect x="460" y="80" width="55" height="45" rx="7" fill="#2d2d2d" stroke="#6fcf97" stroke-width="2.5"/><text x="487" y="108">4</text>
+  </g>
+
+  <path d="M115,93 C160,93 220,93 256,93" fill="none" stroke="#888" stroke-width="1.5" stroke-dasharray="3,3"/>
+  <path d="M456,93 C420,93 360,93 320,93" fill="none" stroke="#888" stroke-width="1.5" stroke-dasharray="3,3"/>
+  <text x="287" y="70" fill="#888" font-size="11" text-anchor="middle">old links (removed)</text>
+
+  <!-- new bypass link -->
+  <path d="M115,110 C220,150 350,150 460,110" fill="none" stroke="#5b8def" stroke-width="2.2" marker-end="url(#am)"/>
+  <path d="M460,120 C350,160 220,160 115,120" fill="none" stroke="#f2c94c" stroke-width="2.2" marker-end="url(#amp)"/>
+  <defs>
+    <marker id="am" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#5b8def"/></marker>
+    <marker id="amp" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#f2c94c"/></marker>
+  </defs>
+
+  <text x="87" y="65" fill="#ccc" font-size="12" text-anchor="middle">temp.prev</text>
+  <text x="287" y="65" fill="#e07a5f" font-size="12" text-anchor="middle">temp (being deleted)</text>
+  <text x="487" y="65" fill="#ccc" font-size="12" text-anchor="middle">temp.next</text>
+
+  <text x="287" y="175" fill="#5b8def" font-size="12" text-anchor="middle">temp.prev.next = temp.next (blue)</text>
+  <text x="287" y="197" fill="#f2c94c" font-size="12" text-anchor="middle">temp.next.prev = temp.prev (yellow)</text>
+</svg>
