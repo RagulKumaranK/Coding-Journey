@@ -1,6 +1,6 @@
 # Remove Duplicates from a Sorted Doubly Linked List
 
-## 💡 Intuition
+## 💡Intuition
 
 Because the list is **sorted**, any duplicate values must sit right next to each other — there's no need to search the whole list for repeats. So we only ever need to compare a node with its immediate neighbor, `temp` vs `temp.next`.
 
