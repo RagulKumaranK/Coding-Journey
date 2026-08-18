@@ -5,7 +5,6 @@
 Instead of reversing the whole list at once, break it into chunks of size `k` and reverse each chunk individually, then stitch the chunks back together in order.
 
 For every chunk: find its `k`th node, temporarily cut the chunk off from the rest of the list, reverse just that chunk, then reconnect it — the previous chunk's tail points into this chunk's new head, and this chunk's new tail points to the next chunk. If a leftover group has fewer than `k` nodes, leave it untouched (that's what `findKthNode` returning `null` signals).
-
 ---
 
 ## 🔰 Initial State
