@@ -1,6 +1,6 @@
 # Sort List
 
-## 💡 Intuition
+## 💡Intuition
 
 The structure of the linked list (the pointers) never actually needs to change — only the *values* stored inside the nodes need to end up in sorted order.
 
